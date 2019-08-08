@@ -7,9 +7,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Sphinx-Themes template'
-copyright = '2018, sphinx-themes.org'
-author = 'sphinx-themes.org'
+project = 'Micriobiome_modelling_worshop_Documentation'
+copyright = 'mbl_lab'
+author = 'Chandrasekhar.G'
 
 # The short X.Y version
 version = ''
@@ -84,7 +84,10 @@ html_static_path = ['_static']
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
+html_sidebars = {
+   '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
+   'using/windows': ['windowssidebar.html', 'searchbox.html'],
+}
 #---sphinx-themes-----
 import guzzle_sphinx_theme
 
