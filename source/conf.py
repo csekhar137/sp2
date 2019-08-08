@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# import os
-# import sys
+import os
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
 
@@ -9,7 +9,7 @@
 
 project = 'Sphinx-Themes template'
 copyright = '2018, sphinx-themes.org'
-author = 'sphinx-themes.org'
+author = 'CHandrasekhar'
 
 # The short X.Y version
 version = ''
@@ -58,7 +58,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
-
+extensions = ['sphinx.ext.mathjax', 'guzzle_sphinx_theme', 'sphinxcontrib.contentui', 'sphinx_markdown_tables']
+master_doc = 'toc'
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -84,14 +85,12 @@ html_static_path = ['_static']
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-html_sidebars = {
-   '**': ['globaltoc.html', 'sourcelink.html', 'searchbox.html'],
-   'using/windows': ['windowssidebar.html', 'searchbox.html'],
-}
+# html_sidebars = {}
 #---sphinx-themes-----
 import guzzle_sphinx_theme
 
-html_theme_path = ["."]
+html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
+html_theme_path = guzzle_sphinx_theme.html_theme_path()
 html_theme = 'guzzle_sphinx_theme'
 
 # Register the theme as an extension to generate a sitemap.xml
